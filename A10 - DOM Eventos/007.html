@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>007 - Exercicio DOM</title>
+    <style>
+        *{
+            background-color: rgb(75, 75, 75);
+            color: rgb(125, 125, 125)   
+        }
+
+        p{
+            display: inline;
+            margin: 10px;
+            font-size: 20pt;
+            font-weight: 900;
+        }
+
+        p#resultado{
+            display: block;
+            font-family: Arial;
+            font-weight: 400;
+        }
+
+        input{
+            font-size: 20pt;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Somando valores</h1>
+    <input type="number" id="txtn1">
+    <p>+</p>
+    <input type="number" id="txtn2">
+    <input type="button" id="btnsomar" value="somar"> 
+    <p id="resultado">Resultado</p>
+
+    <script>
+        var btnSomar = window.document.querySelector('input#btnsomar')
+        btnSomar.addEventListener('click', somar);
+
+        var a = String('')
+
+        function somar(){
+            var txtn1 = window.document.getElementById('txtn1');
+            var txtn2 = window.document.getElementById('txtn2');
+            var n1 = Number.parseFloat(txtn1.value);
+            var n2 = Number.parseFloat(txtn2.value);
+            var s = n1 + n2;
+            var resultado = window.document.querySelector('p#resultado');
+            resultado.innerHTML = `A soma de ${n1} e ${n2} é igual a <strong>${s.toFixed(2)}</strong>`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+@charset "utf8";
+body{
+    /*background-color: rgb(107, 107, 241);*/
+    background-color: rgb(70, 142, 236);
+    font: normal 15pt Arial;
+}
+
+header{
+    text-align: center;
+    color: white;
+}
+
+section{
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.377);
+}
+
+footer{
+    font-style: italic;
+    text-align: center;
+    color: white;
+}
+
+input{
+    padding: 7px;
+    font-size: 12pt;
+    font-family: arial;
+    margin: 0px 5px;
+}
+
+input#gerar{
+    background-color: rgba(15, 143, 228, 0.76);
+    color: white;
+    border: 0px;
+    border-radius: 10px;
+}
+
+select{
+    width: 180px;
+    height: 180px;
+}

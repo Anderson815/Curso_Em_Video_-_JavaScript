@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>006 - DOM eventos</title>
+    <style>
+        
+        *
+        {
+            background-color: rgb(75, 75, 75);
+        }
+
+        p
+        {
+            font-family: Arial;
+            font-size: 18pt;
+            background-color: transparent; 
+        }
+
+        div#div_html
+        {
+            background-color: rgb(167, 63, 63);
+            border: 3px solid rgb(29, 28, 28);
+            width: 400px;
+            height: 400px;
+            margin: 0px 30px;
+            float: left;
+        }
+
+        div#div_js
+        {
+            background-color: rgb(236, 236, 28);
+            border: 3px solid rgb(30, 30, 30);
+            width: 400px;
+            height: 400px;
+            margin: 0px 30px;
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- repare que na div ele está associando uma função do JS ao evento do HTML-->
+    <!-- O evento de click da div (onclick) vai disparar a função clicar() do JS-->
+    <div id="div_html" onclick="clicar_html()" onmouseover="entrar_html()" onmouseout="sair_html()">
+        <p>O evento está no HTML</p>
+        <p>Isso é uma DIV</p>
+    </div>
+
+    <div id="div_js">
+        <p>O evento esta no JS</p>
+        <p>Isso é a segunda DIV</p>
+    </div>
+
+    
+
+    <script>
+        // funções html
+        function clicar_html(){
+            var d = window.document.querySelector('div#div_html');
+            d.style = "background-color: rgb(250, 100, 0);";
+
+            var p = window.document.getElementsByTagName('p')[1];
+            p.innerText = "Você clicou!!!";
+        }
+
+        function entrar_html(){
+            var d = window.document.getElementById('div_html');
+            d.style = "background-color: rgb(255, 100, 100);"
+            
+            var p = window.document.getElementsByTagName('p')[1]
+            p.innerText = "Você entrou"
+        }
+
+        function sair_html(){
+            var d = window.document.querySelector('div#div_html');
+            d.style = "background-color: rgb(200, 200, 200)";
+
+            var p = window.document.getElementsByTagName('p')[1];
+            p.innerText = "Você saiu"
+        }
+
+        //funções JS
+
+        //var d = window.document.querySelector('div#div_js');
+        var d = window.document.getElementsByTagName('div')[1] 
+        d.addEventListener('click', clicar_js); //adicionando evento de click para a div div_js e associando esse evento a função clicar_js
+        d.addEventListener('mouseover', entrar_js); // adicionando o evento mouseover(mouse em cima) para a div_js e associando esse eventa a função entrar_js
+        d.addEventListener('mouseout', sair_js); // adicionando o evento mouseout(mouse fora) para a div_js e associando esse evento a função sair_js
+
+        function clicar_js(){
+            var d = window.document.getElementsByTagName('div')[1];
+            d.style = "background-color: rgb(250, 50, 0)";
+
+            var p = window.document.getElementsByTagName('p')[3];
+            p.style = "text-decoration: overline underline";
+            p.innerText = "Você cliclou!";    
+        }
+
+        function entrar_js(){
+            var d = window.document.querySelector('div#div_js');
+            d.style = "background-color: rgb(0, 200, 100)";
+
+            var p = window.document.getElementsByTagName('p')[3];
+            p.style = "font-style: italic";
+            p.innerText = "você entrou";
+        }
+
+        function sair_js(){
+            var d = window.document.getElementsByTagName('div')[1];
+            d.style = "background-color: rgb(200, 150, 100)";
+
+            var p = window.document.getElementsByTagName('p')[3];
+            p.style = "font-size: 22pt";
+            p.innerText = "Você saiu";
+        }
+
+    </script>
+</body>
+</html>

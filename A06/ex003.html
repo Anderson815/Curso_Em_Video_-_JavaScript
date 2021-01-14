@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX03</title>
+    <style>
+        /*Comentário CSS*/
+        body{
+            background-color: rgba(75, 75 , 75, .9);
+        }
+
+        h1{
+            color: rgb(200, 200, 200);
+            font-size: 35px;
+            font-family: arial;
+            text-align: center;
+        }
+
+        p{
+            color: rgb(180, 180, 180);
+            font-family: Arial;
+            font-size: 18px;
+            text-align: justify;
+            text-indent: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, mundo!</h1> <!-- Comentário HTML -->
+    <p>Já me livrei da maldição!</p>
+    <script>
+        //Comentário JS
+        
+        /*
+        var s1 = window.prompt('Digite um número: ');
+        var n1 = Number.parseInt(s1);
+
+        var s2 = window.prompt('Digite outro número: ');
+        var n2 = Number.parseInt(s2);
+        */
+
+        //Converte String para  Number do tipo Int
+        var n1 = Number.parseInt(window.prompt('Digite um número: '));
+        var n2 = Number.parseInt(window.prompt('Digite outro número: '));
+        
+        var soma = n1 + n2;
+        //window.alert('A soma entre ' + n1 + ' e ' + n2 + ' é ' + soma); // Modo de concatenação +
+        window.alert(`A soma entre ${n1} e ${n2} é ${soma}`); // Modo Template String
+
+        var n3 = Number.parseInt(10);
+        var n4 = Number.parseInt(20);
+
+        //Converte Number para String
+        n3 = n3.toString(n3);
+        n4 = String(n4);
+
+        var concatenacao = n3 + n4;
+
+        window.alert('a conversão para inteiro do N3 e N4 resulto na seguinte concatenação ' + concatenacao);
+    </script>
+</body>
+</html>

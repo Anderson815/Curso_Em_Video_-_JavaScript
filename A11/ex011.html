@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex011 - Pratica de condições - parte 1 - exercicio 2 </title>
+    <style>
+        
+        *{
+            font-family: Arial;
+            font-size: 14pt;
+            background-color: rgb(75, 75, 75);
+        }
+
+        h1{
+            font-size: 25pt;
+            color: rgb(100, 100, 150);
+        }
+
+        input#nacionalidade{
+            padding: 7px;
+            color: rgb(200, 200, 200);
+            background-color: rgb(100, 100, 100);
+            border-radius: 10px; 
+            border: 5px solid rgb(25, 25, 25);         
+        }
+
+        p#resultado{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Você é estrangeiro?</h1>
+    <input type="text" id="nacionalidade" value="informe sua nacionalidade">
+    <input type="button" id="verificar" value="Verificar">
+    <p id="resultado">Você é </p>
+
+    <script>
+        
+        var nacio = window.document.querySelector('input#nacionalidade');
+        nacio.addEventListener('click', remover_texto);
+
+        var btn_verificar = window.document.getElementById('verificar');
+        btn_verificar.addEventListener('click', resultado);
+
+        function remover_texto(){
+            var nacio = window.document.getElementById('nacionalidade');
+            var p_res = window.document.querySelector('p#resultado');
+
+            nacio.value = '';
+            p_res.innerText = 'Você é'
+            p_res.style = 'display: none;';
+        }
+
+        function resultado(){
+            var nacio = window.document.getElementsByTagName('input')[0];
+            var p_res = window.document.getElementById('resultado');
+
+            p_res.style = 'display: block; ';
+
+            if(nacio.value == 'Brasil'){
+                //p_res.innerText += 'brasileiro';
+                p_res.innerText += ' brasileiro';
+            }else{
+                p_res.innerText += ' estrangeiro';
+            }
+        }
+
+    </script>
+</body>
+</html>

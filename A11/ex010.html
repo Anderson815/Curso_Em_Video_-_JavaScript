@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex010 - Pratica de condições - parte 1</title>
+    <style>
+        *{
+            background-color: rgb(75, 75, 75);
+        }
+
+        h1{
+            font-family: Arial;
+            font-size: 30pt;
+            color: rgb(120, 120, 150);
+            text-align: center;
+            text-decoration: underline overline rgb(220, 50, 0);
+            width: 100%;
+        }
+
+        p{
+            font-family: Arial;
+            font-size: 14pt;
+        }
+
+        span{
+            font-weight: 900;
+        }
+
+        input{
+            font-family: Arial;
+            font-size: 14pt;
+            color: rgb(220, 220, 220);
+            background-color: rgb(120, 120, 120);
+            border: 5px solid rgb(50, 50, 50);
+            padding: 5px;
+        }
+
+        input#verificar{
+            font-family: Arial;
+            font-size: 14pt;
+            color: rgb(50, 50, 50);
+            background-color: rgb(0, 150, 100);
+            padding: 5px;
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Multas do DETRAN</h1>
+    <input id="velocidade" type="string" value="digite a velocidade aqui">
+    <input id="verificar" type="button" value="VERIFICAR">
+    
+
+    <p id="informativo">Sua velocidade é de 0 KM/h</p>
+    <p>Analise da situação</p>
+    <p>Dirija sempe <span>COM SEGURANÇA</span></p>
+
+    <script>
+
+        var campo = window.document.getElementById('velocidade');
+        campo.addEventListener('click', remove_texto);
+
+        var verificar = window.document.getElementById('verificar');
+        verificar.addEventListener('click', analisar);
+
+        function remove_texto(){
+            var campo = window.document.querySelector('input#velocidade');
+            campo.value = ' ';
+        }
+
+        function analisar(){
+            
+            var inpt_vel = window.document.querySelector('input#velocidade');
+            var p_analise = window.document.getElementsByTagName('p')[1];
+            var p_vel = window.document.querySelector('p#informativo');
+
+            var vel = Number.parseFloat(inpt_vel.value);
+
+            if(vel > 60){
+                var nivel_gravidade = (vel - 60) / 10 <= 1? 1: Math.ceil((vel - 60) / 10);
+                var multa = nivel_gravidade * 150;
+
+                p_vel.innerText = `Sua velocidade é de ${vel}Km/h`;
+                p_analise.innerHTML = `você recebeu uma MULTA e terá que pagar <strong>${multa.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}</strong>`;
+            }else{
+                p_vel.innerText = `Sua velocidade é de ${vel}Km/h`;
+                p_analise.innerText = 'Parabéns, você é um motorista consciente';
+            }
+        }
+    </script>
+</body>
+</html>  

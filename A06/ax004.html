@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX04</title>
+    <style>
+        body{
+            background-color: rgba(75, 75, 75, .9);
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var nome = window.prompt('Informe o seu nome');
+        document.write(`Olá, <strong>${nome}</strong>! Prazer em conhece-lo<br/>`);
+        document.write(`Seu nome contém ${nome.length} letras<br/>`); //.length quantidade de caracteres
+        document.write(`Seu nome em maiúsculo é ${nome.toUpperCase()} <br/>`); //.toUpperCase deixa a string em maiúsculo
+        document.write(`Seu nome em minúsculo é ${nome.toLowerCase()} <br/>`); //.toLowerCase deixa a String em minúsculo
+
+        var salario = Number.parseFloat(window.prompt("Digite seu salário"));
+        document.write(`<br/><br/>Seu sálario é ${salario.toFixed(2).replace(".", ",")}`); //.toFixed(numero) - quantidade de casa pós vírgula de acordo com o número e .replace -troca o . por ,
+        document.write(`<br/>Agora seu sálario do jeito certo: ${salario.toLocaleString('pt-br', {style: 'currency', currency: "BRL"})}`)
+    </script>
+</body>
+</html>

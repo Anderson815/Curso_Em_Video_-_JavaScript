@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dex005 - primeiros passos com o DOM</title>
+    <style>
+        body{
+            background-color: rgba(75, 75, 75 , .9);
+            color: rgb(175, 175, 175);
+            font: normal 18pt Arial; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos de DOM</h1>
+    <P>Aqui vai o resultado</P>
+    <p class='t'>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+    <p id='t1' class='teste_class'><span style="font-weight: 700">Teste 1</span></p>
+    <p id='t2' class='teste_class' name="teste_name"><span style="font-weight: 700">Teste 2</span></p>
+    <p id='t3' calss='teste_class' name='teste_name'><span style="font-weight: 700">Teste 3</span></p>
+    <p id='t4'><span style="font-weight: 700">Teste 4</span></p>
+    <p id='t5'><span style="font-weight: 700">Teste 5</span></p>
+    <div class="menssagem" id="m">Clique em mim</div>
+
+    <script>
+        //window é o objeto supremo ele é o pai de todos os objetos
+        //para acessar qualquer elemento escrito no html vc terá que utilizar alguns métodos de acesso aos objeto filho de document básicamente isso é o DOM
+     
+        //repare que eu criei 5 parágrafos contento o mesmo texto, com diferença numérica
+
+        var p1 = window.document.getElementsByTagName('p')[2]; // Acesso pelo nome da TAG (p, h1, div, table, img, li, td e entre outras tags do HTML)
+        p1.style = 'letter-spacing: 2px; text-decoration: underline; font-style: italic'; //style é para a  alterar o css do objeto, repare que o que está entre aspas duplas é exatamente a forma que você escreveria no CSS
+
+        var p2 = window.document.getElementsByClassName('teste_class')[1]; // Acesso pela CLASSE de componente
+        p2.style = "color: rgb(255, 100, 100); font-family: Calibri"; // style é para modificar o CSS do componente
+
+        var p3 = window.document.getElementsByName('teste_name')[1]; // Acesso pelo NOME do componente
+        p3.style = "color: rgb(100 , 150, 200); font-family: Apple Chancery; text-decoration: line-through"; // style é para modificar p CSS do componente
+
+        // repare que todos os método de acesso acima requer indice do componente([<número>]), como se fosse um array e é um Array
+        // pois em um site eu posso ter muitos componbentes com os mesmos TAGs, CLASSs e NAMEs
+
+        var p4 = window.document.getElementById('t4'); // Acesso pelo ID do componente
+        p4.style = "color: rgb(150, 150, 255); font-size: 22pt; text-decoration: underline overline rgb(255, 255, 175)"; // style é para modificar o CSS do componente
+
+        // o método de acesso por ID não precisa de indice já que ID é único
+
+        var p5 = window.document.querySelector('p#t5'); // Acesso com base em CSS
+        p5.style = 'color: rgb(255, 100, 0); font-size: 25pt'; // style é para modificar o CSS do componente
+
+        //var p = window.document.getElementById('para1');
+        
+
+        var body = window.document.body; //esse é um exemplo de acesso a tag do html pelo DOM
+        
+        
+
+        /*
+        var d = window.document.getElementById('msg');//essa é uma manei mais filtrada de localizar seus objetos HTML
+        d.style.backgroundColor = 'rgb(150, 100, 150)'
+        d.style.width = '200px';
+        d.style.height = '200px';
+        d.style.border = '5px solid black';
+        d.innerText = 'Estou aguardando ...';
+        */
+
+        var a = window.document.getElementsByTagName('div')[0];
+        a.style.color = 'black';
+        
+        var b = window.document.getElementById('m');
+        d.style.color = 'black';
+        
+
+        var c = window.document.getElementsByClassName('menssagem')[0];
+        
+        
+
+
+        var d = window.document.querySelector('div#m')
+        d.style = 'border: 3px solid rgb(100, 100, 100); color: rgb(100, 50, 250);';
+
+        window.document.write("Está escrito: " + p1.innerHTML);        
+    </script>
+</body>
+</html>
