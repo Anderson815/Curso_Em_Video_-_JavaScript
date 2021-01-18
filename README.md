@@ -2,7 +2,7 @@
 
 Exercícios ao longo do curso de **JavaScript** da plataforma **Curso Em Vídeo**.
 
-Nesse curso utiliza a **Visual Studio Code** e ensina:
+Nesse curso utiliza a **IDE Visual Studio Code** e ensina:
 
 * Variáveis e tipos primitivos
 * Operadores aritméticos
