@@ -1,6 +1,6 @@
 # Curso Em Vídeo: JavaScript
 
-Exercícios ao longo do curso de **JavaScript** da plataforma **Curso Em Vídeo**.
+Exercícios ao longo do curso de **JavaScript** da plataforma <a href="https://www.cursoemvideo.com/cursos/">**Curso Em Vídeo**</a>.
 
 Nesse curso utiliza a **IDE Visual Studio Code** e ensina:
 
